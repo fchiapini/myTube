@@ -1,0 +1,41 @@
+{
+  "topics": [
+    {
+      "name": "JavaScript",
+      "subjects": [
+        {
+          "beginner": ["PLDyQo7g0_nsX8_gZAB8KD1lL4j4halQBJ"],
+          "intermediate": ["PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84"]
+        }
+      ]
+    },
+    {
+      "name": "Japanese",
+      "subjects": [
+        {
+          "writing": [
+            "PLPSfPyOOcp3SxDZf7gkbApq_PrJsGf7Pn",
+            "PLPSfPyOOcp3Q8DNjJvUzMFcgM0tZ_0a87"
+          ],
+          "grammar": ["PLag_mhJfCJ-18WyYoklCPxIpYbeRgmWLJ"]
+        }
+      ]
+    },
+    {
+      "name": "Brazilian Portuguese",
+      "subjects": [
+        {
+          "beginner": ["PLlsxoL4OXm7XLqAQY_Q-_hCB6EZ8AUpjg"]
+        }
+      ]
+    },
+    {
+      "name": "English",
+      "subjects": [
+        {
+          "beginner": ["PLfQSN9FlyB6Rm4xMKTyahH3oUOgF0tU4T"]
+        }
+      ]
+    }
+  ]
+}
