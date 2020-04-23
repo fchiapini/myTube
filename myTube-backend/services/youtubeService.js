@@ -1,53 +1,43 @@
 import { google } from 'googleapis'
 const youtube = google.youtube('v3')
 
-const getVideosFromPlaylist = async (playlistId, pageToken, items) => {
+const getVideosFromPlaylistByPageToken = (playlistId, pageToken) => {
   const options = {
     key: process.env.YOUTUBE_API_KEY,
     playlistId: playlistId,
     part: 'id, contentDetails, snippet',
-    maxResult: 50,
+    maxResult: 100,
     pageToken: pageToken
   }
-
-  return youtube.playlistItems.list(options)
-}
-
-const getAllVideos = async (topic) => {
-  const playlistIds = PLAYLIST_IDS_BY_LANGUAGE[topic]
-  let promises = []
-  let allVideos = []
-  if (playlistIds) {
-    playlistIds.forEach((playlistId) => {
-      promises.push(
-        youtubeService.getAllVideos(playlistId).then(
-          (videos) => videos,
-          function (error) {
-            res.sendStatus(500, error)
-          }
-        )
-      )
-    })
-  }
-  Promise.all(promises).then((playlists) => {
-    res.json([].concat.apply([], playlists))
-  })
-
-  return getVideosFromPlaylist(playlistId, '', []).then((response) => {
-    let playlistItems = [...response.items]
-    const nextPageToken = response.nextPageToken
-    if (nextPageToken) {
-      return getVideosFromPlaylist(
-        playlistId,
-        nextPageToken,
-        playlistItems
-      ).then((response) => {
-        return playlistItems.concat(...response.items)
+  return new Promise((resolve, reject) => {
+    try {
+      youtube.playlistItems.list(options, (error, result) => {
+        if (result) {
+          resolve(result)
+        } else {
+          throw error
+        }
       })
-    } else {
-      return playlistItems
+    } catch (e) {
+      reject(e)
     }
   })
 }
 
-export const youtubeService = { getAllVideos }
+const getVideosFromPlaylist = async (playlistId, nextPageToken, items = []) => {
+  const response = await getVideosFromPlaylistByPageToken(
+    playlistId,
+    nextPageToken
+  )
+  const newItems = items.concat(response.data.items)
+  if (response.data.nextPageToken) {
+    return getVideosFromPlaylist(
+      playlistId,
+      response.data.nextPageToken,
+      newItems
+    )
+  }
+  return newItems
+}
+
+export const youtubeService = { getVideosFromPlaylist }
