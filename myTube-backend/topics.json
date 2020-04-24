@@ -2,6 +2,27 @@
   "topics": [
     {
       "name": "JavaScript",
+      "image": "js.png",
+      "subjects": [
+        {
+          "beginner": ["PLDyQo7g0_nsX8_gZAB8KD1lL4j4halQBJ"],
+          "intermediate": ["PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84"]
+        }
+      ]
+    },
+    {
+      "name": "Html",
+      "image": "html.png",
+      "subjects": [
+        {
+          "beginner": ["PLDyQo7g0_nsX8_gZAB8KD1lL4j4halQBJ"],
+          "intermediate": ["PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84"]
+        }
+      ]
+    },
+    {
+      "name": "Css",
+      "image": "css.png",
       "subjects": [
         {
           "beginner": ["PLDyQo7g0_nsX8_gZAB8KD1lL4j4halQBJ"],
@@ -11,6 +32,7 @@
     },
     {
       "name": "Japanese",
+      "image": "japanese.png",
       "subjects": [
         {
           "writing": [
@@ -23,6 +45,7 @@
     },
     {
       "name": "Brazilian Portuguese",
+      "image": "pt_br.png",
       "subjects": [
         {
           "beginner": ["PLlsxoL4OXm7XLqAQY_Q-_hCB6EZ8AUpjg"]
@@ -31,6 +54,7 @@
     },
     {
       "name": "English",
+      "image": "english.png",
       "subjects": [
         {
           "beginner": ["PLfQSN9FlyB6Rm4xMKTyahH3oUOgF0tU4T"]

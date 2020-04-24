@@ -1,9 +1,33 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6> </v-flex>
-  </v-layout>
+  <v-container fluid>
+    <v-row justify="center">
+      <v-col
+        v-for="(topic, index) in topics"
+        :key="index"
+        cols="6"
+        sm="4"
+        md="2"
+      >
+        <v-card>
+          <v-img :src="formatImagePath(topic.image)" />
+          <v-card-title>{{ topic.name }}</v-card-title>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-export default {}
+import { mapState } from 'vuex'
+export default {
+  computed: mapState({
+    topics: (state) => state.topics.topics
+  }),
+
+  methods: {
+    formatImagePath(img) {
+      return require(`~/assets/${img}`)
+    }
+  }
+}
 </script>

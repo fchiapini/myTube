@@ -1,8 +1,11 @@
 <template>
   <v-app>
     <nav-bar />
+    <v-content>
+      <nuxt />
+    </v-content>
     <v-footer app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span>Felipe Chiapini &copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
 </template>
@@ -21,7 +24,7 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            'Where you can find all the events taking place in your neighborhood'
+            'Where you can find useful content to learn new skills from Youtube'
         }
       ]
     }

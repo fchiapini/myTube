@@ -15,8 +15,10 @@ export const mutations = {
 }
 
 export const actions = {
-  fetchTopics({ commit }, topics) {
-    commit('SET_TOPICS', topics)
+  fetchTopics({ commit }) {
+    return TopicService.getTopics().then((response) => {
+      commit('SET_TOPICS', response.data)
+    })
   },
   fetchVideosByTopic({ commit }, topic) {
     return TopicService.getVideosByTopic(topic).then((response) => {

@@ -2,7 +2,7 @@ import data from '../topics.json'
 
 const getTopics = () => {
   return data.topics.map((topic) => {
-    return topic.name
+    return { name: topic.name, image: topic.image }
   })
 }
 
