@@ -2,15 +2,15 @@ import TopicService from '@/services/TopicService.js'
 
 export const state = () => ({
   topics: [],
-  videos: []
+  topicVideos: {}
 })
 
 export const mutations = {
   SET_TOPICS(state, topics) {
     state.topics = topics
   },
-  SET_TOPIC(state, topic) {
-    state.topic = topic
+  SET_TOPIC_VIDEOS(state, topicVideos) {
+    state.topicVideos = topicVideos
   }
 }
 
@@ -20,9 +20,9 @@ export const actions = {
       commit('SET_TOPICS', response.data)
     })
   },
-  fetchVideosByTopic({ commit }, topic) {
+  fetchTopicVideos({ commit }, topic) {
     return TopicService.getVideosByTopic(topic).then((response) => {
-      commit('SET_VIDEOS', response.data)
+      commit('SET_TOPIC_VIDEOS', response.data)
     })
   }
 }

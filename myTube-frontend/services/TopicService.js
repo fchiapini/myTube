@@ -15,6 +15,6 @@ export default {
   },
 
   getVideosByTopic(topic) {
-    return apiClient.get(`/videos/topic/${topic}`)
+    return apiClient.get(`/videos/${topic}`)
   }
 }

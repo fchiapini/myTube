@@ -6,6 +6,6 @@ const router = express.Router()
 
 router.get('/topics', topicController.getTopics)
 
-router.get('/videos/:topic', youtubeController.getVideos)
+router.get('/videos/:topic', youtubeController.getTopicVideos)
 
 export { router }

@@ -1,5 +1,6 @@
 import { google } from 'googleapis'
 const youtube = google.youtube('v3')
+import data from '../topics.json'
 
 const getVideosFromPlaylistByPageToken = (playlistId, pageToken) => {
   const options = {
@@ -40,4 +41,37 @@ const getVideosFromPlaylist = async (playlistId, nextPageToken, items = []) => {
   return newItems
 }
 
-export const youtubeService = { getVideosFromPlaylist }
+const isPlaylistFromSubject = (playlist, subject) =>
+  subject.playlistIds.includes(playlist[0].snippet.playlistId)
+
+const groupVideosBySubject = (subjects, playlists) => {
+  let videosBySubject = []
+  subjects.forEach((subject) => {
+    let videos = [].concat.apply(
+      [],
+      playlists.filter((playlist) => isPlaylistFromSubject(playlist, subject))
+    )
+    videosBySubject.push({
+      title: subject.title,
+      videos: videos
+    })
+  })
+  return videosBySubject
+}
+
+const getVideos = async (topic) => {
+  const subjects = data.topics.find((tpc) => tpc.name === topic)['subjects']
+
+  let promises = []
+  subjects.forEach((subject) => {
+    subject.playlistIds.map((playlistId) => {
+      promises.push(getVideosFromPlaylist(playlistId, '', []))
+    })
+  })
+  return Promise.all(promises).then((playlists) => {
+    const videosBySubject = groupVideosBySubject(subjects, playlists)
+    return { topic: topic, videosBySubject: videosBySubject }
+  })
+}
+
+export const youtubeService = { getVideos }
