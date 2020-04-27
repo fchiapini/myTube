@@ -5,8 +5,12 @@
       "image": "js.png",
       "subjects": [
         {
-          "beginner": ["PLDyQo7g0_nsX8_gZAB8KD1lL4j4halQBJ"],
-          "intermediate": ["PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84"]
+          "title": "beginner",
+          "playlistIds": ["PLDyQo7g0_nsX8_gZAB8KD1lL4j4halQBJ"]
+        },
+        {
+          "title": "intermediate",
+          "playlistIds": ["PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84"]
         }
       ]
     },
@@ -15,8 +19,12 @@
       "image": "html.png",
       "subjects": [
         {
-          "beginner": ["PLDyQo7g0_nsX8_gZAB8KD1lL4j4halQBJ"],
-          "intermediate": ["PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84"]
+          "title": "beginner",
+          "playlistIds": ["PLDyQo7g0_nsX8_gZAB8KD1lL4j4halQBJ"]
+        },
+        {
+          "title": "intermediate",
+          "playlistIds": ["PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84"]
         }
       ]
     },
@@ -25,8 +33,12 @@
       "image": "css.png",
       "subjects": [
         {
-          "beginner": ["PLDyQo7g0_nsX8_gZAB8KD1lL4j4halQBJ"],
-          "intermediate": ["PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84"]
+          "title": "beginner",
+          "playlistIds": ["PLDyQo7g0_nsX8_gZAB8KD1lL4j4halQBJ"]
+        },
+        {
+          "title": "intermediate",
+          "playlistIds": ["PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84"]
         }
       ]
     },
@@ -35,11 +47,15 @@
       "image": "japanese.png",
       "subjects": [
         {
-          "writing": [
+          "title": "writing",
+          "playlistIds": [
             "PLPSfPyOOcp3SxDZf7gkbApq_PrJsGf7Pn",
             "PLPSfPyOOcp3Q8DNjJvUzMFcgM0tZ_0a87"
-          ],
-          "grammar": ["PLag_mhJfCJ-18WyYoklCPxIpYbeRgmWLJ"]
+          ]
+        },
+        {
+          "title": "grammar",
+          "playlistIds": ["PLag_mhJfCJ-18WyYoklCPxIpYbeRgmWLJ"]
         }
       ]
     },
@@ -48,7 +64,8 @@
       "image": "pt_br.png",
       "subjects": [
         {
-          "beginner": ["PLlsxoL4OXm7XLqAQY_Q-_hCB6EZ8AUpjg"]
+          "title": "beginner",
+          "playlistIds": ["PLlsxoL4OXm7XLqAQY_Q-_hCB6EZ8AUpjg"]
         }
       ]
     },
@@ -57,7 +74,8 @@
       "image": "english.png",
       "subjects": [
         {
-          "beginner": ["PLfQSN9FlyB6Rm4xMKTyahH3oUOgF0tU4T"]
+          "title": "beginner",
+          "playlistIds": ["PLfQSN9FlyB6Rm4xMKTyahH3oUOgF0tU4T"]
         }
       ]
     }
