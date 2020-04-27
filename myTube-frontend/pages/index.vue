@@ -8,10 +8,12 @@
         sm="4"
         md="2"
       >
-        <v-card>
-          <v-img :src="formatImagePath(topic.image)" />
-          <v-card-title>{{ topic.name }}</v-card-title>
-        </v-card>
+        <nuxt-link :to="`/topic/${topic.name}`">
+          <v-card>
+            <v-img :src="formatImagePath(topic.image)" />
+            <v-card-title>{{ topic.name }}</v-card-title>
+          </v-card>
+        </nuxt-link>
       </v-col>
     </v-row>
   </v-container>
