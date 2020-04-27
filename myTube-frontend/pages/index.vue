@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container fluid class="pa-8">
     <v-row justify="center">
       <v-col
         v-for="(topic, index) in topics"
@@ -11,7 +11,9 @@
         <nuxt-link :to="`/topic/${topic.name}`">
           <v-card>
             <v-img :src="formatImagePath(topic.image)" />
-            <v-card-title>{{ topic.name }}</v-card-title>
+            <v-card-title class="title font-weight-light white--text">{{
+              topic.name
+            }}</v-card-title>
           </v-card>
         </nuxt-link>
       </v-col>
@@ -33,3 +35,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+a {
+  text-decoration: none;
+}
+</style>

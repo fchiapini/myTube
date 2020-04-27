@@ -2,13 +2,22 @@
   <nav>
     <v-app-bar flat app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Awesome MyTube</v-toolbar-title>
+      <nuxt-link to="/">
+        <v-toolbar-title class="title font-weight-bold text-uppercase red--text"
+          >Awesome MyTube</v-toolbar-title
+        ></nuxt-link
+      >
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" absolute temporary>
       <v-list-item>
         <v-list-item-content>
-          <v-list-item-title>Awesome MyTube</v-list-item-title>
+          <nuxt-link to="/">
+            <v-list-item-title
+              class="title font-weight-bold text-uppercase red--text"
+              >Awesome MyTube</v-list-item-title
+            >
+          </nuxt-link>
         </v-list-item-content>
       </v-list-item>
 
@@ -18,7 +27,10 @@
         <v-list-item v-for="(topic, index) in topics" :key="index" link>
           <nuxt-link :to="`/topic/${topic.name}`">
             <v-list-item-content>
-              <v-list-item-title>{{ topic.name }}</v-list-item-title>
+              <p class="body-1 font-weight-light white--text">
+                {{ topic.name }}
+              </p>
+              <!-- <v-list-item-title class="white--text body-1"></v-list-item-title> -->
             </v-list-item-content>
           </nuxt-link>
         </v-list-item>
@@ -42,4 +54,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+a {
+  text-decoration: none;
+}
+</style>
