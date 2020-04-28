@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-app-bar flat app>
+    <v-app-bar color="primary" flat app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <nuxt-link to="/">
         <v-toolbar-title class="title font-weight-bold text-uppercase red--text"
@@ -9,7 +9,7 @@
       >
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" absolute temporary>
+    <v-navigation-drawer v-model="drawer" color="primary" absolute temporary>
       <v-list-item>
         <v-list-item-content>
           <nuxt-link to="/">
@@ -30,7 +30,6 @@
               <p class="body-1 font-weight-light white--text">
                 {{ topic.name }}
               </p>
-              <!-- <v-list-item-title class="white--text body-1"></v-list-item-title> -->
             </v-list-item-content>
           </nuxt-link>
         </v-list-item>

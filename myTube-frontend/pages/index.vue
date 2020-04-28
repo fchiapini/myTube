@@ -9,7 +9,7 @@
         md="2"
       >
         <nuxt-link :to="`/topic/${topic.name}`">
-          <v-card>
+          <v-card color="primary">
             <v-img :src="formatImagePath(topic.image)" />
             <v-card-title class="title font-weight-light white--text">{{
               topic.name

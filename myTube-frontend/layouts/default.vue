@@ -4,7 +4,7 @@
     <v-content>
       <nuxt />
     </v-content>
-    <v-footer app>
+    <v-footer color="primary" app>
       <span>Felipe Chiapini &copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
@@ -18,7 +18,7 @@ export default {
   },
   head() {
     return {
-      titleTemplate: '%s - Curated List from useful content from Youtube',
+      titleTemplate: '%s - Curated List of useful content from Youtube',
       meta: [
         {
           hid: 'description',
