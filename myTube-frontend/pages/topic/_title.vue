@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <p class="headline font-weight-bold red--text">{{ topicVideos.topic }}</p>
     <v-row v-for="(subject, index) in topicVideos.videosBySubject" :key="index">
       <v-col>
         <v-row>

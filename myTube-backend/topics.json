@@ -9,6 +9,10 @@
           "playlistIds": ["PLDyQo7g0_nsX8_gZAB8KD1lL4j4halQBJ"]
         },
         {
+          "title": "fundamentals",
+          "playlistIds": ["PLTo9PCskHpbFN8rndGupKHTY980NRDAr0"]
+        },
+        {
           "title": "intermediate",
           "playlistIds": ["PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84"]
         }
@@ -19,12 +23,8 @@
       "image": "html.png",
       "subjects": [
         {
-          "title": "beginner",
-          "playlistIds": ["PLDyQo7g0_nsX8_gZAB8KD1lL4j4halQBJ"]
-        },
-        {
-          "title": "intermediate",
-          "playlistIds": ["PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84"]
+          "title": "basics",
+          "playlistIds": ["PLqGj3iMvMa4KlJn1pMYPVV3eYzxJlWcON"]
         }
       ]
     },
@@ -33,12 +33,26 @@
       "image": "css.png",
       "subjects": [
         {
-          "title": "beginner",
-          "playlistIds": ["PLDyQo7g0_nsX8_gZAB8KD1lL4j4halQBJ"]
+          "title": "basics",
+          "playlistIds": ["PLqGj3iMvMa4IOmy04kDxh_hqODMqoeeCy"]
         },
         {
-          "title": "intermediate",
-          "playlistIds": ["PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84"]
+          "title": "flexbox basics",
+          "playlistIds": ["PL4-IK0AVhVjMSb9c06AjRlTpvxL3otpUd"]
+        },
+        {
+          "title": "css grid",
+          "playlistIds": ["PLbSquHt1VCf1x_-1ytlVMT0AMwADlWtc1"]
+        }
+      ]
+    },
+    {
+      "name": "Python",
+      "image": "js.png",
+      "subjects": [
+        {
+          "title": "beginner",
+          "playlistIds": ["PLlrxD0HtieHhS8VzuMCfQD4uJ9yne1mE6"]
         }
       ]
     },
