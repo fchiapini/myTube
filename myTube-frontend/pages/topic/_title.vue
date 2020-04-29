@@ -15,24 +15,18 @@
                   v-if="video.snippet.thumbnails"
                   color="primary"
                   class="ma-2 pa-4"
+                  @click.stop="showVideoPlayer(video)"
                 >
                   <v-img
                     height="180"
                     width="320"
                     :src="video.snippet.thumbnails.medium.url"
                     alt="Video thumbnail"
-                    @click="showDialog = !showDialog"
                   >
                   </v-img>
                   <v-card-subtitle class="text-break" style="max-width: 20rem">
                     {{ video.snippet.title }}
                   </v-card-subtitle>
-                  <template>
-                    <video-player
-                      :show="showDialog"
-                      :video="video"
-                    ></video-player>
-                  </template>
                 </v-card>
               </v-slide-item>
             </v-slide-group>
@@ -40,6 +34,13 @@
         </v-row>
       </v-col>
     </v-row>
+    <template v-if="currentVideo">
+      <video-player
+        key="video.id"
+        :show="showVideoPlayerDialog"
+        :video="currentVideo"
+      />
+    </template>
   </v-container>
 </template>
 
@@ -64,13 +65,33 @@ export default {
 
   data() {
     return {
-      showDialog: false
+      currentVideo: null
     }
   },
 
-  computed: mapState({
-    topicVideos: (state) => state.topics.topicVideos
-  })
+  computed: {
+    ...mapState({
+      topicVideos: (state) => state.topics.topicVideos
+    }),
+    ...mapState({
+      showVideoPlayerDialog: (state) => state.topics.showVideoPlayerDialog
+    })
+  },
+
+  watch: {
+    showVideoPlayerDialog(newValue, oldValue) {
+      if (!newValue) {
+        this.currentVideo = null
+      }
+    }
+  },
+
+  methods: {
+    showVideoPlayer(video) {
+      this.currentVideo = video
+      this.$store.dispatch('topics/showVideoPlayerDialog', true)
+    }
+  }
 }
 </script>
 

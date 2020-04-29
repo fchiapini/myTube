@@ -1,11 +1,12 @@
 <template>
-  <v-dialog v-model="show" max-width="800">
+  <v-dialog v-model="show" width="800" height="600" @click:outside="close()">
     <v-card>
       <v-card-title> {{ video.snippet.title }} </v-card-title>
       <youtube
         player-width="800"
         player-height="600"
         :video-id="video.contentDetails.videoId"
+        @ready="ready"
       ></youtube>
     </v-card>
   </v-dialog>
@@ -21,6 +22,28 @@ export default {
     video: {
       type: Object,
       required: true
+    }
+  },
+
+  data() {
+    return {
+      dialog: false,
+      player: null
+    }
+  },
+
+  methods: {
+    ready(event) {
+      this.player = event.target
+    },
+
+    stop() {
+      this.player.stopVideo()
+    },
+
+    close() {
+      this.$store.dispatch('topics/showVideoPlayerDialog', false)
+      this.stop()
     }
   }
 }
