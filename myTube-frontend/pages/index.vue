@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="pa-8">
+  <v-container fluid>
     <v-row justify="center">
       <v-col
         v-for="(topic, index) in topics"
@@ -7,9 +7,11 @@
         cols="6"
         sm="4"
         md="2"
+        tile
+        flat
       >
         <nuxt-link :to="`/topic/${topic.name}`">
-          <v-card color="primary">
+          <v-card color="#121212">
             <v-img :src="formatImagePath(topic.image)" />
             <v-card-title class="title font-weight-light white--text">{{
               topic.name
@@ -27,6 +29,10 @@ export default {
   computed: mapState({
     topics: (state) => state.topics.topics
   }),
+
+  created() {
+    this.$store.dispatch('topics/clearTopicVideos')
+  },
 
   methods: {
     formatImagePath(img) {

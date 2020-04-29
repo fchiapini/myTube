@@ -15,6 +15,9 @@ export const mutations = {
   },
   SET_VIDEO_PLAYER_DIALOG(state, show) {
     state.showVideoPlayerDialog = show
+  },
+  CLEAR_TOPIC_VIDEOS(state) {
+    state.topicVideos = {}
   }
 }
 
@@ -31,5 +34,8 @@ export const actions = {
   },
   showVideoPlayerDialog({ commit }, show) {
     commit('SET_VIDEO_PLAYER_DIALOG', show)
+  },
+  clearTopicVideos({ commit }) {
+    commit('CLEAR_TOPIC_VIDEOS')
   }
 }

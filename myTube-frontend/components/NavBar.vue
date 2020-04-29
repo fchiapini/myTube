@@ -24,15 +24,21 @@
       <v-divider></v-divider>
 
       <v-list dense>
-        <v-list-item v-for="(topic, index) in topics" :key="index" link>
-          <nuxt-link :to="`/topic/${topic.name}`">
-            <v-list-item-content>
-              <p class="body-1 font-weight-light white--text">
-                {{ topic.name }}
-              </p>
-            </v-list-item-content>
-          </nuxt-link>
-        </v-list-item>
+        <v-list-item-group :value="item">
+          <v-list-item
+            v-for="(topic, index) in topics"
+            :key="index"
+            active-class="selected"
+          >
+            <nuxt-link :to="`/topic/${topic.name}`">
+              <v-list-item-content class="body-1 font-weight-light white--text">
+                <p class="body-1 font-weight-light white--text">
+                  {{ topic.name }}
+                </p>
+              </v-list-item-content>
+            </nuxt-link>
+          </v-list-item>
+        </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
   </nav>
@@ -47,14 +53,26 @@ export default {
     }
   },
 
-  computed: mapState({
-    topics: (state) => state.topics.topics
-  })
+  computed: {
+    ...mapState({
+      topics: (state) => state.topics.topics
+    }),
+    ...mapState({
+      topic: (state) => state.topics.topicVideos.topic
+    }),
+    item() {
+      return this.topics.findIndex((element) => element.name === this.topic)
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 a {
   text-decoration: none;
+}
+
+.selected {
+  border-left: red solid 0.5em;
 }
 </style>

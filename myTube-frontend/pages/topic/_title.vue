@@ -13,8 +13,10 @@
               <v-slide-item v-for="(video, i) in subject.videos" :key="i">
                 <v-card
                   v-if="video.snippet.thumbnails"
-                  color="primary"
-                  class="ma-2 pa-4"
+                  color="#121212"
+                  class="pa-2"
+                  tile
+                  flat
                   @click.stop="showVideoPlayer(video)"
                 >
                   <v-img
@@ -24,7 +26,10 @@
                     alt="Video thumbnail"
                   >
                   </v-img>
-                  <v-card-subtitle class="text-break" style="max-width: 20rem">
+                  <v-card-subtitle
+                    class="text-break white--text"
+                    style="max-width: 20rem"
+                  >
                     {{ video.snippet.title }}
                   </v-card-subtitle>
                 </v-card>
