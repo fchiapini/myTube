@@ -9,7 +9,7 @@
       >
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" color="primary" absolute temporary>
+    <v-navigation-drawer v-model="drawer" color="primary" app temporary>
       <v-list-item>
         <v-list-item-content>
           <nuxt-link to="/">
@@ -29,14 +29,15 @@
             v-for="(topic, index) in topics"
             :key="index"
             active-class="selected"
+            link
+            nuxt
+            :to="`/topic/${topic.name}`"
           >
-            <nuxt-link :to="`/topic/${topic.name}`">
-              <v-list-item-content class="body-1 font-weight-light white--text">
-                <p class="body-1 font-weight-light white--text">
-                  {{ topic.name }}
-                </p>
-              </v-list-item-content>
-            </nuxt-link>
+            <v-list-item-content class="body-1 font-weight-light white--text">
+              <p class="body-1 font-weight-light white--text">
+                {{ topic.name }}
+              </p>
+            </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
       </v-list>

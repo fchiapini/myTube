@@ -10,7 +10,7 @@
         </v-row>
         <v-row>
           <v-col>
-            <v-slide-group mandatory show-arrows>
+            <v-slide-group show-arrows>
               <v-slide-item v-for="(video, i) in subject.videos" :key="i">
                 <v-card
                   v-if="video.snippet.thumbnails"
