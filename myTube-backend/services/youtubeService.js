@@ -1,6 +1,10 @@
 import { google } from 'googleapis'
-const youtube = google.youtube('v3')
+import CacheService from './cacheService.js'
 import data from '../topics.json'
+
+const youtube = google.youtube('v3')
+const ttl = 60 * 60 * 24 // cache for 24 hours
+const cache = new CacheService(ttl)
 
 const getVideosFromPlaylistByPageToken = (playlistId, pageToken) => {
   const options = {
@@ -59,8 +63,8 @@ const groupVideosBySubject = (subjects, playlists) => {
   return videosBySubject
 }
 
-const getVideos = async (topic) => {
-  const subjects = data.topics.find((tpc) => tpc.name === topic)['subjects']
+const getVideosFromAllSubjectPlaylists = async (topic) => {
+  const subjects = topic.subjects
 
   let promises = []
   subjects.forEach((subject) => {
@@ -70,8 +74,22 @@ const getVideos = async (topic) => {
   })
   return Promise.all(promises).then((playlists) => {
     const videosBySubject = groupVideosBySubject(subjects, playlists)
-    return { topic: topic, videosBySubject: videosBySubject }
+    return { topic: topic.name, videosBySubject: videosBySubject }
   })
+}
+
+const getVideos = async (topic) => {
+  const topicFromJSON = data.topics.find((tpc) => tpc.name === topic)
+
+  if (!topicFromJSON) {
+    throw Error('Topic not found!')
+  }
+
+  const videos = await cache.get(
+    topicFromJSON.name,
+    getVideosFromAllSubjectPlaylists(topicFromJSON)
+  )
+  return videos
 }
 
 export const youtubeService = { getVideos }

@@ -6,12 +6,17 @@
         <v-spacer />
         <v-btn text @click="close()"><v-icon>mdi-close</v-icon></v-btn>
       </v-card-title>
-      <youtube
-        player-width="800"
-        player-height="600"
-        :video-id="video.contentDetails.videoId"
-        @ready="ready"
-      ></youtube>
+      <v-card-content>
+        <youtube
+          player-width="800"
+          player-height="600"
+          :video-id="video.contentDetails.videoId"
+          @ready="ready"
+        ></youtube>
+      </v-card-content>
+      <v-card-subtitle class="white--text">
+        {{ video.snippet.description }}
+      </v-card-subtitle>
     </v-card>
   </v-dialog>
 </template>
