@@ -50,11 +50,22 @@ export default {
 
   computed: {
     iframeHeigth() {
-      return this.getIframeHeightByScreenSize()
+      return this.$vuetify.breakpoint.name === 'xs' ? 360 : 480
     },
 
     iframeWidth() {
-      return this.getIframeWidthByScreenSize()
+      let width = 0
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+          width = 370
+          break
+        case 'sm':
+          width = 768
+          break
+        default:
+          width = 800
+      }
+      return width
     }
   },
 
@@ -65,36 +76,6 @@ export default {
 
     videoPath(videoId) {
       return `https://www.youtube.com/embed/${videoId}?autoplay=1`
-    },
-
-    getIframeHeightByScreenSize() {
-      switch (this.$vuetify.breakpoint.name) {
-        case 'xs':
-          return 360
-        case 'sm':
-          return 480
-        case 'md':
-          return 600
-        case 'lg':
-          return 480
-        case 'xl':
-          return 480
-      }
-    },
-
-    getIframeWidthByScreenSize() {
-      switch (this.$vuetify.breakpoint.name) {
-        case 'xs':
-          return 370
-        case 'sm':
-          return 768
-        case 'md':
-          return 799
-        case 'lg':
-          return 799
-        case 'xl':
-          return 799
-      }
     }
   }
 }
