@@ -63,7 +63,7 @@ export default {
           width = 768
           break
         default:
-          width = 800
+          width = 799
       }
       return width
     }
