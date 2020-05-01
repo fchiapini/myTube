@@ -2,14 +2,14 @@
   <v-container>
     <p class="headline font-weight-bold red--text">{{ topicVideos.topic }}</p>
     <v-row v-for="(subject, index) in topicVideos.videosBySubject" :key="index">
-      <v-col>
+      <v-col class="pa-0">
         <v-row>
-          <v-col>
-            <p class="text-capitalize">{{ subject.title }}</p>
+          <v-col class="py-0 pl-6">
+            <p class="ma-0 text-capitalize">{{ subject.title }}</p>
           </v-col>
         </v-row>
         <v-row>
-          <v-col>
+          <v-col class="pa-0">
             <v-slide-group show-arrows>
               <v-slide-item v-for="(video, i) in subject.videos" :key="i">
                 <v-card

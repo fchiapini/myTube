@@ -3,8 +3,9 @@
     <v-app-bar color="primary" flat app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <nuxt-link to="/">
-        <v-toolbar-title class="title font-weight-bold text-uppercase red--text"
-          >Awesome MyTube</v-toolbar-title
+        <v-toolbar-title
+          class="title font-weight-bold text-capitalize red--text"
+          >MyTube</v-toolbar-title
         ></nuxt-link
       >
     </v-app-bar>
@@ -14,8 +15,8 @@
         <v-list-item-content>
           <nuxt-link to="/">
             <v-list-item-title
-              class="title font-weight-bold text-uppercase red--text"
-              >Awesome MyTube</v-list-item-title
+              class="title font-weight-bold text-capitalize red--text"
+              >MyTube</v-list-item-title
             >
           </nuxt-link>
         </v-list-item-content>
