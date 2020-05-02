@@ -3,5 +3,5 @@ module.exports = {
   semi: false,
   trailingComma: 'none',
   arrowParens: 'always',
-  htmlWhitespaceSensitivity: 'ignore'
+  tabWidth: 2
 }

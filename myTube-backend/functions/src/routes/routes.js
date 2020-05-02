@@ -1,4 +1,4 @@
-import express from 'express'
+import * as express from 'express'
 import { topicController } from '../controllers/topicController'
 import { youtubeController } from '../controllers/youtubeController.js'
 

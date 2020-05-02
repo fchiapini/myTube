@@ -1,4 +1,4 @@
-import data from '../topics.json'
+import * as data from '../../topics.json'
 
 const getTopics = () => {
   return data.topics.map((topic) => {

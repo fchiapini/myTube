@@ -1,6 +1,6 @@
 import { google } from 'googleapis'
 import CacheService from './cacheService.js'
-import data from '../topics.json'
+import * as data from '../../topics.json'
 
 const youtube = google.youtube('v3')
 const ttl = 60 * 60 * 24 // cache for 24 hours
