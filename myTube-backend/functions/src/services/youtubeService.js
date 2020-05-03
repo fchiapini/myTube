@@ -49,11 +49,12 @@ const isPlaylistFromSubject = (playlist, subject) =>
   subject.playlistIds.includes(playlist[0].snippet.playlistId)
 
 const groupVideosBySubject = (subjects, playlists) => {
-  let videosBySubject = []
+  const videosBySubject = []
   subjects.forEach((subject) => {
-    let videos = [].concat.apply(
-      [],
-      playlists.filter((playlist) => isPlaylistFromSubject(playlist, subject))
+    const videos = [].concat(
+      ...playlists.filter((playlist) =>
+        isPlaylistFromSubject(playlist, subject)
+      )
     )
     videosBySubject.push({
       title: subject.title,
@@ -66,7 +67,7 @@ const groupVideosBySubject = (subjects, playlists) => {
 const getVideosFromAllSubjectPlaylists = async (topic) => {
   const subjects = topic.subjects
 
-  let promises = []
+  const promises = []
   subjects.forEach((subject) => {
     subject.playlistIds.map((playlistId) => {
       promises.push(getVideosFromPlaylist(playlistId, '', []))
