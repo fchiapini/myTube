@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: process.env.BASE_URL,
+  baseURL: 'https://us-central1-fir-app-3e66a.cloudfunctions.net/webApi/api',
   withCredentials: false,
   headers: {
     Accept: 'application/json',
