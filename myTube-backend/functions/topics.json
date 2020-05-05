@@ -1,24 +1,6 @@
 {
   "topics": [
     {
-      "name": "JavaScript",
-      "image": "js.png",
-      "subjects": [
-        {
-          "title": "beginner",
-          "playlistIds": ["PLDyQo7g0_nsX8_gZAB8KD1lL4j4halQBJ"]
-        },
-        {
-          "title": "fundamentals",
-          "playlistIds": ["PLTo9PCskHpbFN8rndGupKHTY980NRDAr0"]
-        },
-        {
-          "title": "intermediate",
-          "playlistIds": ["PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84"]
-        }
-      ]
-    },
-    {
       "name": "Html",
       "image": "html.png",
       "subjects": [
@@ -47,12 +29,41 @@
       ]
     },
     {
+      "name": "JavaScript",
+      "image": "js.png",
+      "subjects": [
+        {
+          "title": "beginner",
+          "playlistIds": [
+            "PLoYCgNOIyGACTDHuZtn0qoBdpzV9c327V",
+            "PLDyQo7g0_nsX8_gZAB8KD1lL4j4halQBJ"
+          ]
+        },
+        {
+          "title": "code! programming with p5.js",
+          "playlistIds": ["PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA"]
+        },
+        {
+          "title": "intermediate",
+          "playlistIds": ["PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84"]
+        },
+        {
+          "title": "tensorflow.js - intelligence and learning",
+          "playlistIds": ["RDQMFQVEcXoo7n0"]
+        }
+      ]
+    },
+    {
       "name": "Python",
       "image": "python.png",
       "subjects": [
         {
           "title": "beginner",
           "playlistIds": ["PLlrxD0HtieHhS8VzuMCfQD4uJ9yne1mE6"]
+        },
+        {
+          "title": "more python for beginners",
+          "playlistIds": ["PLlrxD0HtieHiXd-nEby-TMCoUNwhbLUnj"]
         }
       ]
     },
@@ -79,7 +90,18 @@
       "subjects": [
         {
           "title": "beginner",
-          "playlistIds": ["PLlsxoL4OXm7XLqAQY_Q-_hCB6EZ8AUpjg"]
+          "playlistIds": [
+            "PLVPq-uWoe5kntXhtt0UUHVfCPnuGzQryZ",
+            "PLlsxoL4OXm7XLqAQY_Q-_hCB6EZ8AUpjg"
+          ]
+        },
+        {
+          "title": "100 most used words in portuguese",
+          "playlistIds": ["PLVPq-uWoe5knfpplwelEryu4oYvcdtnX9"]
+        },
+        {
+          "title": "advanced",
+          "playlistIds": ["PLVPq-uWoe5klLvkb5qufDxQ470JEkFWBu"]
         }
       ]
     },
