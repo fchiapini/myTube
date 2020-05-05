@@ -22,13 +22,15 @@ export const mutations = {
 }
 
 export const actions = {
-  async fetchTopics({ commit }) {
-    const topics = await TopicService.getTopics()
-    commit('SET_TOPICS', topics)
+  fetchTopics({ commit }) {
+    return TopicService.getTopics().then((response) => {
+      return commit('SET_TOPICS', response.data)
+    })
   },
-  async fetchTopicVideos({ commit }, topic) {
-    const videos = await TopicService.getVideosByTopic(topic)
-    commit('SET_TOPIC_VIDEOS', videos)
+  fetchTopicVideos({ commit }, topic) {
+    return TopicService.getVideosByTopic(topic).then((response) => {
+      commit('SET_TOPIC_VIDEOS', response.data)
+    })
   },
   showVideoPlayerDialog({ commit }, show) {
     commit('SET_VIDEO_PLAYER_DIALOG', show)
