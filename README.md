@@ -42,13 +42,13 @@ firebase init
 YOUTUBE_API_KEY=YOUR_YOUTUBE_API_KEY
 ```
 
-### Installing backend
+## Installing backend
 
 ```
 cd myTube-backend/functions
 ```
 
-## Project setup
+### Project setup
 
 ```
 npm install
@@ -72,7 +72,7 @@ npm run build
 npm run lint
 ```
 
-## Deployment
+### Deployment
 
 ```
 cd functions
