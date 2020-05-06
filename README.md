@@ -110,7 +110,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 ## Built With
 
-- [Nuxt.js](https://nuxtjs.org/) - The javascript framework
+- [Nuxt.js](https://nuxtjs.org/) - The Progressive Vue.js Framework
 - [Firebase Cloud Functions](https://firebase.google.com/docs/functions) - Cloud functions
 - [Vuetify](https://vuetifyjs.com) - Vue UI Library with beautifully handcrafted Material Components
 - [Youtube API](https://developers.google.com/youtube/v3/getting-started) - Getting playlists from Youtube
