@@ -1,6 +1,6 @@
 # myTube
 
-A curated Youtube playlists to learn new skills
+A video player web app with curated Youtube playlists to learn new skills
 
 ## Live Demo
 
@@ -10,9 +10,11 @@ A curated Youtube playlists to learn new skills
 
 ### Prerequisites Backend
 
-Create a firebase account:
-[Firebase](https://firebase.google.com/)
-[YOUTUBE API KEY](https://developers.google.com/youtube/v3/getting-started)
+- Create a firebase account:
+  [Firebase](https://firebase.google.com/)
+
+- Create a YOUTUBE API KEY:
+  [YOUTUBE API KEY](https://developers.google.com/youtube/v3/getting-started)
 
 - Node 10.20.0+
 
