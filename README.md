@@ -91,11 +91,8 @@ npm run deploy
 
 ## Build Setup Frontend
 
-    ```
-    cd myTube-frontend
-    ```
-
     ```bash
+    $ cd myTube-frontend
     # install dependencies
     $ yarn install
 
