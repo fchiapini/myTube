@@ -2,6 +2,8 @@
 
 A video player web app with curated Youtube playlists to learn new skills
 
+Customize your playlists changing the file "topics.json" and adding the images to the folder myTube-frontend/assets
+
 ## Live Demo
 
 [Live Demo](https://evening-reaches-01206.herokuapp.com)
