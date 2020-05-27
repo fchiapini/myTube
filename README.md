@@ -8,6 +8,10 @@ Customize your playlists changing the file "topics.json" and adding the images t
 
 [Live Demo](https://evening-reaches-01206.herokuapp.com)
 
+![Screenshot1](myTube-frontend/screenshots/myTube_screenshot1.png)
+
+![Screenshot2](myTube-frontend/screenshots/myTube_screenshot2.png)
+
 ## Getting Started
 
 ### Prerequisites Backend
